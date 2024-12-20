@@ -2,7 +2,7 @@ const { release } = require("os");
 const request = require("postman-request");
 
 const similarMovie = function (movieSearch, callback) {
-  const apiKey = process.env.apiKey;
+  const apiKey = "ba601e7beb04fa8334825e41115cf572";
   const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(
     movieSearch
   )}&include_adult=false&language=en-US&page=1`;

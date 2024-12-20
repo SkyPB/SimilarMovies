@@ -2,16 +2,9 @@ const path = require("path");
 const express = require("express");
 const hbs = require("hbs");
 const bodyParser = require("body-parser");
-const cors = require("cors");
 const similarMovie = require("./utils/main");
 
 const app = express();
-
-app.use(
-  cors({
-    origin: "https://https://similarmovies.onrender.com/",
-  })
-);
 
 const port = process.env.PORT || 3000;
 
@@ -41,7 +34,6 @@ app.get("", (req, res) => {
 
 app.get("/movies", (req, res) => {
   const movie = req.query.movie_search;
-  res.json({ message: "CORS enabled!" });
   if (!movie) {
     return res.send({
       error: "You must provide a movie title",
